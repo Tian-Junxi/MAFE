@@ -1,0 +1,27 @@
+# 当前 Excel 数据格式对应的训练参数。
+# 所有列号均为 0-based：Excel 第 1 列 A -> 0，第 2 列 B -> 1，以此类推。
+# 该配置保留空列位置，适用于类似：
+# A: 推力 / 角度标签, C-F: 电机1-4, H-J: 陀螺仪方差1-3, L-N: 陀螺仪主频1-3,
+# Q-S: 加速度计方差1-3, U-W: 加速度计主频1-3。
+
+csv_has_header: true
+max_iterations: 8
+optimize_hyperparams: true
+
+# variance：表格中的“方差”列已经是 Hz^2；
+# std：表格中的“方差”列实际是 Gaussian sigma / 标准差，需要平方后作为 Hz^2。
+variance_mode: variance
+min_observation_variance: 1.0e-6
+
+# 四个电机转速列：C, D, E, F。
+motor_speed_cols: [2, 3, 4, 5]
+
+# 陀螺仪：H-J 为方差，L-N 为主频。
+gyro:
+  variance_cols:  [7, 8, 9]
+  frequency_cols: [11, 12, 13]
+
+# 加速度计：Q-S 为方差，U-W 为主频。
+acc:
+  variance_cols:  [16, 17, 18]
+  frequency_cols: [20, 21, 22]

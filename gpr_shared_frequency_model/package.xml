@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>gpr_shared_frequency_model</name>
+  <version>0.1.0</version>
+  <description>Shared single-motor GPR model for motor-speed-to-vibration-main-frequency prediction.</description>
+
+  <maintainer email="tech.tjx@hotmail.com">Jack Tian</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>libeigen3-dev</build_depend>
+  <build_depend>yaml-cpp</build_depend>
+
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>libeigen3-dev</exec_depend>
+  <exec_depend>yaml-cpp</exec_depend>
+</package>

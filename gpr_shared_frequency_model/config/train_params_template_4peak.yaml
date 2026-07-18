@@ -1,0 +1,19 @@
+# 4 主频版本模板。
+# 若后续实验数据每行最多提取 4 个主频和 4 个方差，
+# 请把下面的列号改成你实际 CSV 中对应列号。
+
+csv_has_header: true
+max_iterations: 8
+optimize_hyperparams: true
+variance_mode: variance
+min_observation_variance: 1.0e-6
+
+motor_speed_cols: [2, 3, 4, 5]
+
+gyro:
+  variance_cols:  [7, 8, 9, 10]
+  frequency_cols: [11, 12, 13, 14]
+
+acc:
+  variance_cols:  [16, 17, 18, 19]
+  frequency_cols: [20, 21, 22, 23]

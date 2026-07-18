@@ -1,0 +1,19 @@
+<launch>
+  <arg name="csv_path" default="$(find gpr_shared_frequency_model)/examples/updated_database_from_uploaded_excel.csv" />
+
+  <!-- 输出目录：默认保存到 ~/catkin_ws/output。也可以运行 roslaunch 时覆盖：
+       roslaunch gpr_shared_frequency_model train_shared_gpr.launch output_dir:=/your/path -->
+  <arg name="output_dir" default="$(env HOME)/catkin_ws/output" />
+  <arg name="model_dir" default="$(arg output_dir)" />
+
+  <arg name="param_file" default="$(find gpr_shared_frequency_model)/config/train_params_excel_current.yaml" />
+
+  <node pkg="gpr_shared_frequency_model"
+        type="train_shared_gpr_node"
+        name="train_shared_gpr_node"
+        output="screen">
+    <param name="csv_path" value="$(arg csv_path)" />
+    <param name="model_dir" value="$(arg model_dir)" />
+    <param name="param_file" value="$(arg param_file)" />
+  </node>
+</launch>

@@ -1,0 +1,22 @@
+<launch>
+  <!-- 模型目录：默认读取 ~/catkin_ws/output 下的 .gpr 模型。 -->
+  <arg name="output_dir" default="$(env HOME)/catkin_ws/output" />
+  <arg name="model_dir" default="$(arg output_dir)" />
+
+  <!-- 是否在终端打印每次预测耗时。高频输入时可以设为 false。 -->
+  <arg name="print_timing" default="true" />
+
+  <!-- 耗时日志节流时间，单位 s。0 表示每次预测都打印。 -->
+  <arg name="timing_log_throttle_sec" default="0.0" />
+
+  <node pkg="gpr_shared_frequency_model"
+        type="predict_shared_gpr_node"
+        name="predict_shared_gpr_node"
+        output="screen">
+    <param name="model_dir" value="$(arg model_dir)" />
+    <param name="gyro_model_name" value="gyro_gpr_model.gpr" />
+    <param name="acc_model_name" value="acc_gpr_model.gpr" />
+    <param name="print_timing" value="$(arg print_timing)" />
+    <param name="timing_log_throttle_sec" value="$(arg timing_log_throttle_sec)" />
+  </node>
+</launch>

@@ -1,0 +1,22 @@
+<launch>
+  <!--
+    pose_to_virtual_imu_node
+
+    功能：
+      订阅 pose_to_virtual_imu.yaml 中指定的位姿话题，发布虚拟 IMU。
+
+    使用示例：
+      roslaunch ros_pose_to_virtual_imu pose_to_virtual_imu.launch
+
+    若使用 rosbag 回放：
+      rosparam set /use_sim_time true
+      roslaunch ros_pose_to_virtual_imu pose_to_virtual_imu.launch
+      rosbag play your_data.bag --clock
+  -->
+  <node pkg="ros_pose_to_virtual_imu"
+        type="pose_to_virtual_imu_node"
+        name="pose_to_virtual_imu_node"
+        output="screen">
+    <rosparam command="load" file="$(find ros_pose_to_virtual_imu)/config/pose_to_virtual_imu.yaml" />
+  </node>
+</launch>

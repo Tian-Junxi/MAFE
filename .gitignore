@@ -1,0 +1,58 @@
+# ROS / Catkin
+build/
+devel/
+logs/
+bin/
+lib/
+__pycache__/
+*.pyc
+*.pyo
+.catkin_tools/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+
+# Python
+*.egg-info/
+dist/
+*.egg
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Compiled
+*.o
+*.so
+*.a
+*.dylib
+*.exe
+*.dll
+
+# LaTeX / Paper
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+
+# Data (keep examples, ignore large datasets)
+*.bag
+*.mat
+data/
+
+# MATLAB
+*.mex*
+*.asv

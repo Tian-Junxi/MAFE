@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>imu_spectrum_gaussian_fit</name>
+  <version>0.1.0</version>
+  <description>
+    ROS1 package for IMU FFT spectrum extraction and Gaussian peak fitting.
+    It estimates vibration-noise dominant frequencies and variances from gyro/accelerometer measurements.
+  </description>
+
+  <maintainer email="tech.tjx@hotmail.com">Jack Tian</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+
+  <build_depend>cmake_modules</build_depend>
+
+  <export>
+  </export>
+</package>
