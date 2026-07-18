@@ -13,6 +13,19 @@
 
 ---
 
+> **📌 Note**
+> 
+> This repository currently contains **three key modules** of the MAFE framework:
+> - IMU spectrum Gaussian fitting
+> - Pose-to-virtual-IMU derivation
+> - Shared GPR frequency model
+> 
+> The **full MAFE codebase**, including additional modules (e.g., KL/SKL divergence analysis, AR-FFRLS online tracking, Kalman filter integration, and complete experimental pipelines), will be released **upon paper acceptance**.
+> 
+> If you have any questions or collaboration inquiries, please feel free to contact us.
+
+---
+
 ## 📄 Abstract
 
 <!-- TODO: 在此填写你的论文摘要 -->
