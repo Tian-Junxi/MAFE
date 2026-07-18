@@ -170,7 +170,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 📧 Contact
 
-For questions or collaborations, please contact: <!-- TODO: 填写你的邮箱 -->
+For questions or collaborations, please contact: tech.tjx@hotmail.com
 
 ---
 
