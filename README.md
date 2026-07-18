@@ -1,12 +1,12 @@
-# MAFE: Motor-Aware Frequency Estimation for UAV Vibration Noise
+# MAFE: Model-Augmented Adaptive Frequency Estimation for UAV Inertial Sensing Under Maneuver-Dependent Vibration
 
 <p align="center">
-  <img src="figures/1111111.png" width="45%" alt="Result 1"/>
-  <img src="figures/2222222.png" width="45%" alt="Result 2"/>
+  <img src="figures/fig_imu_spectrum_fitting.png" width="45%" alt="IMU Spectrum Gaussian Fitting"/>
+  <img src="figures/fig_gpr_frequency_prediction.png" width="45%" alt="GPR Frequency Prediction"/>
 </p>
 <p align="center">
-  <img src="figures/333333.png" width="45%" alt="Result 3"/>
-  <img src="figures/44444.png" width="45%" alt="Result 4"/>
+  <img src="figures/fig_pose_virtual_imu.png" width="45%" alt="Pose-to-Virtual-IMU"/>
+  <img src="figures/fig_mafe_overview.png" width="45%" alt="MAFE Overview"/>
 </p>
 
 > **⚠️ Notice:** This repository contains **partial** source code for the MAFE algorithm. The complete codebase will be released upon paper acceptance. Stay tuned!
@@ -17,7 +17,7 @@
 
 <!-- TODO: 在此填写你的论文摘要 -->
 
-Accurate estimation of motor-induced vibration noise frequencies is critical for UAV state estimation and control. This repository provides key modules of the **MAFE (Motor-Aware Frequency Estimation)** framework, including:
+Accurate estimation of motor-induced vibration noise frequencies is critical for UAV state estimation and control. This repository provides key modules of the **MAFE (Model-Augmented Adaptive Frequency Estimation)** framework, including:
 
 1. **IMU Spectrum Gaussian Fitting** — Extracting vibration spectral peaks from raw IMU data via FFT + Gaussian peak fitting.
 2. **Pose-to-Virtual-IMU** — Deriving a low-frequency reference IMU from pose/odometry to isolate vibration residuals.
@@ -33,10 +33,10 @@ MAFE/
 ├── LICENSE                                            # License file
 ├── .gitignore
 ├── figures/                                           # Result figures
-│   ├── 1111111.png
-│   ├── 2222222.png
-│   ├── 333333.png
-│   └── 44444.png
+│   ├── fig_imu_spectrum_fitting.png
+│   ├── fig_gpr_frequency_prediction.png
+│   ├── fig_pose_virtual_imu.png
+│   └── fig_mafe_overview.png
 ├── imu_spectrum_gaussian_fit_cn_annotated/            # [Module 1] IMU spectrum Gaussian fitting
 │   ├── README.md
 │   ├── include/
@@ -141,7 +141,7 @@ If you find this work useful, please consider citing:
 
 ```bibtex
 @article{mafe2025,
-  title     = {MAFE: Motor-Aware Frequency Estimation for UAV Vibration Noise},
+  title     = {MAFE: Model-Augmented Adaptive Frequency Estimation for UAV Inertial Sensing Under Maneuver-Dependent Vibration},
   author    = {/* TODO: 填写作者 */},
   journal   = {/* TODO: 填写期刊/会议 */},
   year      = {2025},
