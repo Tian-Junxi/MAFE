@@ -154,37 +154,4 @@ sample_rate_hz: 你的采样率
 max_freq_hz: 不超过 sample_rate_hz/2
 ```
 
-## 7. 与后续 GPR 模型衔接
 
-本包负责提取：
-
-```text
-主频 fd_mu_hz
-主频方差 variance_hz2
-```
-
-后续可与电机转速配对，构造：
-
-```text
-motor_speed, fd_mu_hz, variance_hz2
-```
-
-用于训练共享 GPR 模型，实现：
-
-```text
-4 个电机转速 -> 4 个预测主频 + 4 个预测方差
-```
-
-## 8. 代码注释
-
-本版本已经在主要源码文件中加入了较详细中文注释，尤其是：
-
-- `fft_spectrum.hpp`：解释 FFT、单边谱、Hann 窗、三轴频谱合成；
-- `gaussian_peak_fitter.hpp`：解释谱峰检测、高斯拟合、Ceres 优化、主频/方差/边界计算；
-- `imu_gaussian_fit_node.cpp`：解释 ROS 参数、处理流程和输出文件。
-
-更多说明见：
-
-```text
-docs/代码中文注释说明.md
-```

@@ -70,41 +70,7 @@ sudo apt-get install ros-${ROS_DISTRO}-roscpp ros-${ROS_DISTRO}-std-msgs libeige
 
 ---
 
-## 3. Excel 转 CSV
-
-C++ 训练节点读取 CSV。为了避免 ROS/C++ 直接解析 `.xlsx` 的重依赖，本包提供了一个无第三方依赖的 Excel 转 CSV 脚本：
-
-```bash
-python3 $(rospack find gpr_shared_frequency_model)/scripts/xlsx_to_csv.py \
-  your_database.xlsx \
-  /tmp/gpr_shared_frequency_model/from_excel.csv
-```
-
-这个脚本会保留 Excel 中的空列，因此 YAML 配置中的列号仍然按 Excel 原始列号计算。列号是 **0-based**：
-
-```text
-A -> 0, B -> 1, C -> 2, ...
-```
-
-也可以用一键脚本训练：
-
-```bash
-bash $(rospack find gpr_shared_frequency_model)/scripts/train_from_xlsx.sh \
-  your_database.xlsx \
-  ./gpr_shared_frequency_model_result
-```
-
-默认模型会保存到：
-
-```text
-~/catkin_ws/output/
-```
-
-也可以通过 `output_dir:=/your/path` 或脚本第二个参数自行指定输出目录。
-
----
-
-## 4. 用当前示例数据库训练
+## 3. 用当前示例数据库训练
 
 包内已经包含一个由你上传的 Excel 转换得到的示例 CSV：
 
@@ -154,7 +120,7 @@ acc_final_matched_samples.csv
 
 ---
 
-## 5. 使用自己的 Excel 训练
+## 4. 使用自己的 Excel 训练
 
 假设你的 Excel 在：
 
@@ -183,7 +149,7 @@ bash $(rospack find gpr_shared_frequency_model)/scripts/train_from_xlsx.sh \
 
 ---
 
-## 6. 当前 Excel 列号配置
+## 5. 当前 Excel 列号配置
 
 `config/train_params_excel_current.yaml` 对应如下 Excel 布局：
 
@@ -214,43 +180,7 @@ acc:
 
 ---
 
-## 7. 启动预测节点
-
-训练完成后，启动预测节点：
-
-```bash
-cd ~/catkin_ws
-source devel/setup.bash
-
-roslaunch gpr_shared_frequency_model predict_shared_gpr.launch \
-  model_dir:=./gpr_shared_frequency_model_result
-```
-
-另开一个终端发布四个电机转速：
-
-```bash
-source ~/catkin_ws/devel/setup.bash
-
-rostopic pub -1 /motor_speeds std_msgs/Float64MultiArray \
-"data: [293, 422, 293, 422]"
-```
-
-查看输出：
-
-```bash
-rostopic echo /gyro_predicted_main_frequency
-rostopic echo /acc_predicted_main_frequency
-```
-
-输出格式：
-
-```text
-[mean1, var1, mean2, var2, mean3, var3, mean4, var4]
-```
-
----
-
-## 8. 文件结构
+## 6. 文件结构
 
 ```text
 include/gpr_shared_frequency_model/gpr1d_matern.hpp

@@ -47,7 +47,7 @@ MAFE/
 │   ├── examples/
 │   └── docs/
 ├── pose_to_virtual_imu_package/                       # [Module 2] Pose to virtual IMU
-│   ├── README_中文.md
+│   ├── README.md
 │   ├── matlab/                                        #   MATLAB offline version
 │   └── ros_pose_to_virtual_imu/                       #   ROS C++ online node
 └── gpr_shared_frequency_model/                        # [Module 3] Shared GPR frequency model
@@ -124,7 +124,7 @@ source devel/setup.bash
 See individual module READMEs for detailed usage:
 
 - [IMU Gaussian Fit README](imu_spectrum_gaussian_fit_cn_annotated/README.md) ([中文](imu_spectrum_gaussian_fit_cn_annotated/README_zh.md))
-- [Pose2IMU README](pose_to_virtual_imu_package/README.md) ([中文](pose_to_virtual_imu_package/README_zh.md))
+- [Pose2IMU README](pose_to_virtual_imu_package/README.md)
 - [GPR Model README](gpr_shared_frequency_model/README.md) ([中文](gpr_shared_frequency_model/README_zh.md))
 
 ---
