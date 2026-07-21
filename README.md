@@ -4,6 +4,30 @@
 
 ---
 
+## 🎥 Video Demonstration
+
+**MAFE: Model-Augmented Adaptive Frequency Estimation — Comprehensive Overview**
+
+This video provides a complete walkthrough of the MAFE framework, covering the motivation, methodology, experiments, and key results of our work on maneuver-dependent vibration noise mitigation for low-cost UAV inertial sensing.
+
+<p align="center">
+  <a href="https://github.com/Tian-Junxi/MAFE/blob/main/MAFE.mp4">
+    <img src="figures/fig_overall_framework.png" width="80%" alt="MAFE Video Demonstration — Click to Play"/>
+  </a>
+</p>
+<p align="center">
+  <em>📹 Click the image above to watch the full demonstration video</em><br>
+  <sub>Or directly open: <a href="MAFE.mp4">MAFE.mp4</a></sub>
+</p>
+
+**Video highlights:**
+- 🔬 Problem motivation: how motor-speed divergence causes spectral peak migration, separation, and merging
+- 🏗️ MAFE framework: offline GPR prior training → online variable-order AR-FFRLS tracking
+- 🧪 Motor-bench experiments: spectral transition from merged to multi-component
+- ✈️ Flight experiments: attitude estimation pitch RMSE/MAE reduced by **24.9% / 25.7%**
+
+---
+
 ## 🔍 Problem Description
 
 Low-cost UAV IMUs suffer from severe motor-induced vibration noise during dynamic maneuvers. As motor speeds vary with thrust and attitude changes, the dominant vibration frequencies shift and even split/merge across rotors, making fixed-frequency filtering ineffective.
