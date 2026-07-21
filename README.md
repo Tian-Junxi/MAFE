@@ -1,15 +1,28 @@
 # MAFE: Model-Augmented Adaptive Frequency Estimation for UAV Inertial Sensing Under Maneuver-Dependent Vibration
 
-<p align="center">
-  <img src="figures/fig_imu_spectrum_fitting.png" width="45%" alt="IMU Spectrum Gaussian Fitting"/>
-  <img src="figures/fig_gpr_frequency_prediction.png" width="45%" alt="GPR Frequency Prediction"/>
-</p>
-<p align="center">
-  <img src="figures/fig_pose_virtual_imu.png" width="45%" alt="Pose-to-Virtual-IMU"/>
-  <img src="figures/fig_mafe_overview.png" width="45%" alt="MAFE Overview"/>
-</p>
-
 > **⚠️ Notice:** This repository contains **partial** source code for the MAFE algorithm. The complete codebase will be released upon paper acceptance. Stay tuned!
+
+---
+
+## 🔍 Problem Description
+
+Low-cost UAV IMUs suffer from severe motor-induced vibration noise during dynamic maneuvers. As motor speeds vary with thrust and attitude changes, the dominant vibration frequencies shift and even split/merge across rotors, making fixed-frequency filtering ineffective.
+
+<p align="center">
+  <img src="figures/fig_vibration_problem.png" width="90%" alt="Motor Vibration Spectrum under PWM Variation"/>
+</p>
+<p align="center"><em>Fig. 1: IMU vibration spectrum evolution — (a) from single-motor to four-motor rotation; (b) under prescribed pitch/roll angles. The spectral peaks shift, merge, and split as motor speeds change during maneuvering.</em></p>
+
+---
+
+## 🏗️ Framework Overview
+
+MAFE addresses this challenge through a **model-augmented adaptive frequency estimation** pipeline:
+
+<p align="center">
+  <img src="figures/fig_overall_framework.png" width="95%" alt="MAFE Overall Framework"/>
+</p>
+<p align="center"><em>Fig. 2: Overall framework of the proposed MAFE method. Key stages: (1) IMU spectrum Gaussian fitting for peak identification, (2) Pose-to-virtual-IMU for vibration residual isolation, (3) Shared GPR model for motor-speed-conditioned frequency prediction, (4) AR-FFRLS adaptive tracking, and (5) Kalman filter integration with GPR-predicted noise covariance.</em></p>
 
 ---
 
@@ -46,6 +59,8 @@ MAFE/
 ├── LICENSE                                            # License file
 ├── .gitignore
 ├── figures/                                           # Result figures
+│   ├── fig_vibration_problem.png                      #   Motor vibration spectrum (问题说明)
+│   ├── fig_overall_framework.png                      #   MAFE overall framework (框架介绍)
 │   ├── fig_imu_spectrum_fitting.png
 │   ├── fig_gpr_frequency_prediction.png
 │   ├── fig_pose_virtual_imu.png
